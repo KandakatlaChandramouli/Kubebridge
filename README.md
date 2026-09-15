@@ -1,3 +1,94 @@
+<div align="center">
+
+# KubeBridge
+
+### Kubernetes-Native Infrastructure Bridge
+
+**Declarative infrastructure management through the Kubernetes control plane.**
+
+<br/>
+
+[![GitHub Stars](https://img.shields.io/github/stars/KandakatlaChandramouli/Kubebridge?style=for-the-badge&logo=github&label=STAR%20THIS%20REPO)](https://github.com/KandakatlaChandramouli/Kubebridge/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/KandakatlaChandramouli/Kubebridge?style=for-the-badge&logo=github&label=FORK)](https://github.com/KandakatlaChandramouli/Kubebridge/forks)
+[![GitHub Issues](https://img.shields.io/github/issues/KandakatlaChandramouli/Kubebridge?style=for-the-badge&logo=github&label=ISSUES)](https://github.com/KandakatlaChandramouli/Kubebridge/issues)
+[![GitHub License](https://img.shields.io/github/license/KandakatlaChandramouli/Kubebridge?style=for-the-badge&label=LICENSE)](https://github.com/KandakatlaChandramouli/Kubebridge)
+
+<br/>
+
+[![Go](https://img.shields.io/badge/Go-1.22%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-Native-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![Controller Runtime](https://img.shields.io/badge/Controller--Runtime-Operator-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://github.com/kubernetes-sigs/controller-runtime)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![GitHub Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/KandakatlaChandramouli/Kubebridge/actions)
+
+<br/><br/>
+
+<a href="https://github.com/KandakatlaChandramouli/Kubebridge">
+  <img src="https://img.shields.io/badge/⭐%20Star%20KubeBridge-181717?style=for-the-badge&logo=github&logoColor=white" alt="Star KubeBridge"/>
+</a>
+&nbsp;
+<a href="https://github.com/KandakatlaChandramouli/Kubebridge/issues">
+  <img src="https://img.shields.io/badge/Report%20an%20Issue-D73A49?style=for-the-badge&logo=github&logoColor=white" alt="Report an Issue"/>
+</a>
+&nbsp;
+<a href="https://github.com/KandakatlaChandramouli/Kubebridge">
+  <img src="https://img.shields.io/badge/View%20Source%20Code-24292F?style=for-the-badge&logo=github&logoColor=white" alt="View Source Code"/>
+</a>
+
+<br/><br/>
+
+</div>
+
+---
+
+## Overview
+
+KubeBridge is an open-source Kubernetes controller for managing infrastructure-oriented resources through Kubernetes-native declarative workflows.
+
+Instead of requiring infrastructure configuration to be handled entirely through separate scripts, dashboards, or manual operations, KubeBridge brings infrastructure intent closer to the Kubernetes control plane.
+
+> **Define the desired state. Let the controller reconcile it.**
+
+---
+
+## Why KubeBridge?
+
+Modern infrastructure platforms often involve multiple tools, APIs, configuration formats, and operational workflows.
+
+KubeBridge explores a simpler model:
+
+- Kubernetes as the declarative interface
+- Custom Resources as infrastructure intent
+- Controllers as reconciliation engines
+- Status fields as operational feedback
+- GitOps and CI/CD as natural delivery mechanisms
+
+This approach allows infrastructure workflows to become part of the same ecosystem already used for application deployment and platform operations.
+
+---
+
+## Technology Stack
+
+| Technology | Role |
+|---|---|
+| ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | Core programming language |
+| ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white) | Control plane |
+| ![controller-runtime](https://img.shields.io/badge/controller--runtime-326CE5?style=flat-square&logo=kubernetes&logoColor=white) | Controller framework |
+| ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) | Container packaging |
+| ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) | Continuous integration |
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/KandakatlaChandramouli/Kubebridge.git
+cd Kubebridge
+
+go mod download
+go test ./...
+go build ./...
+
 # KubeBridge
 
 ### Kubernetes-Native Infrastructure Bridge
