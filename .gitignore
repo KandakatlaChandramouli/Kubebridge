@@ -30,3 +30,6 @@ kubebridge
 
 # OS
 .DS_Store
+
+# Kubernetes envtest downloaded binaries
+.envtest-bins/
