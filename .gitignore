@@ -33,3 +33,6 @@ kubebridge
 
 # Kubernetes envtest downloaded binaries
 .envtest-bins/
+
+# Local compiled binaries
+/kubebridge
