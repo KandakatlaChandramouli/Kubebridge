@@ -1,0 +1,61 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: connectors.connectors.kubebridge.dev
+spec:
+  group: connectors.kubebridge.dev
+  scope: Namespaced
+  names:
+    plural: connectors
+    singular: connector
+    kind: Connector
+    shortNames:
+      - conn
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - type
+              properties:
+                type:
+                  type: string
+                  description: Connector implementation type.
+                config:
+                  type: object
+                  additionalProperties:
+                    type: string
+                secretRef:
+                  type: object
+                  description: Reference to a Kubernetes Secret containing connector credentials.
+                  required:
+                    - name
+                    - key
+                  properties:
+                    name:
+                      type: string
+                      description: Name of the Secret in the Connector namespace.
+                    key:
+                      type: string
+                      description: Key containing the connector credential.
+            status:
+              type: object
+              properties:
+                phase:
+                  type: string
+                resourcesSynced:
+                  type: integer
+                  format: int32
+                lastSyncTime:
+                  type: string
+                  format: date-time
+                message:
+                  type: string
+      subresources:
+        status: {}

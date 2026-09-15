@@ -1,0 +1,13 @@
+apiVersion: connectors.kubebridge.dev/v1alpha1
+kind: Connector
+metadata:
+  name: github-connector
+  namespace: kubebridge-system
+spec:
+  type: github
+  config:
+    organization: kubernetes
+    repository: kubernetes
+  secretRef:
+    name: github-credentials
+    key: token

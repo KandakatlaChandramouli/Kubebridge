@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubebridge
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kubebridge
+subjects:
+  - kind: ServiceAccount
+    name: kubebridge
+    namespace: kubebridge-system

@@ -1,0 +1,32 @@
+# Go
+*.test
+*.out
+coverage.out
+coverage.html
+
+# Build artifacts
+/bin/
+/dist/
+/build/
+/tmp/
+kubebridge
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+*.token
+
+# Kubernetes local/runtime files
+.kube/
+*.kubeconfig
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store

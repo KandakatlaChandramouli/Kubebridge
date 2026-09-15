@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test and Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Verify dependencies
+        run: go mod verify
+
+      - name: Format check
+        run: |
+          test -z "$(gofmt -l .)" || {
+            echo "Go files are not formatted:"
+            gofmt -l .
+            exit 1
+          }
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Run vet
+        run: go vet ./...
+
+      - name: Build application
+        run: go build ./cmd/kubebridge
